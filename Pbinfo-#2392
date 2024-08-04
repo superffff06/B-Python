@@ -1,0 +1,15 @@
+import math
+import time
+import sys
+file_in = open ('sumaxl.in', 'r')
+file_out = open ('sumaxl.out', 'w')
+lst = [int(item) for item in file_in.readline().split()]
+s = int(file_in.readline())
+nr = 0
+for i in range(len(lst)):
+    if i==0:
+       pass
+    else :
+       nr= nr*10+lst[i]
+s= s + nr
+file_out.write(str(s))
