@@ -1,0 +1,10 @@
+//////////////////////// INFORMATION ////////////////////////
+When importing (import "file1") it runs file1 first 
+It does not run : (from file 1)
+((           if __name__ == '__main__' :         ))
+((                  something...                 ))
+Then it goes back to the original module that we've run at the start
+When :: from "file1" import stuff 
+we use : stuff (be it class, function() or variable)
+When :: import "file1"  (This also runs file1 , but not as __main__)
+we use : file1.stuff (be it class, function or variable
