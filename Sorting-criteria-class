@@ -1,0 +1,15 @@
+class Reading:
+    name = None
+    grade = None
+    def __init__(self,name,grade):
+        self.name=name
+        self.grade=int(grade) #important, otherwise it sorts in string lexicographic order
+n = int(input())
+students = []
+for i in range(n) :
+    x,y = [item for item in input().split()]
+    student= Reading(x,y)
+    students.append(student)
+students.sort(key=operator.attrgetter('grade','name'))
+for i in students:
+    print(i.name + " " + str(i.grade))
