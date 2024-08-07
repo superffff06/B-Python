@@ -1,0 +1,46 @@
+import math
+import time
+import sys
+import random
+import os
+import shutil
+import functools
+import operator
+import threading
+from messages import hello,sum
+from classes import Information
+def eat(k):
+    time.sleep(k)
+    print("Eating done")
+def drink(k):
+    time.sleep(k)
+    print("Drinking done")
+def study(k):
+    time.sleep(k)
+    print("Studying done")
+if __name__ == "__main__":
+    time1 = int(input())
+    time2 = int(input())
+    time3 = int(input())
+    x = threading.Thread(target=eat, args=(time1,))
+    x.start()
+    y = threading.Thread(target=drink, args=(time2,))
+    y.start()
+    z = threading.Thread(target=study, args=(time3,))
+    z.start()
+#Threading will speed up the program by going to another "task" while something is waiting (time.sleep()). Only 1 thread may run at any given moment
+# when inputting 5,10,15 the program will end at 15 seconds, instead of (5+10+15). Thread_object.join() will join with the Main_Thread once Thread_object is over
+//////////////////
+/////////////////
+#DAEMON THREADS
+def timer():
+    print()
+    count = 0
+    while True:
+       time.sleep(1)
+       count = count + 1
+       print("Logged in for " + str(count) + " seconds")
+x = threading.Thread(target=timer, daemon=True)
+x.start()
+ansmwer = input("Please give me a number")
+#This daemon thread will stop when the main thread is over, as non-daemon threads will continue running in this example
