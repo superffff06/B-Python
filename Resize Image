@@ -1,0 +1,32 @@
+////////////////// change size of image (Pillow instal needed) ////////////////
+import math
+import time
+import sys
+import random
+import os
+import shutil
+import functools
+import operator
+import threading
+from tkinter import *
+from messages import hello,sum
+from classes import Information
+from multiprocessing import Process,cpu_count
+from tkinter import messagebox
+from tkinter import colorchooser
+from tkinter import filedialog
+from tkinter import ttk
+from PIL import Image,ImageTk
+
+
+window = Tk()
+window.geometry("300x300")
+myimage_org = Image.open("future-supercars.png")
+myimage_org = myimage_org.resize((70,70))
+myimage=ImageTk.PhotoImage(myimage_org)
+y=10
+label= Label(window,
+            image=myimage,
+            bg="red")
+label.place(x=100,y=100)
+window.mainloop()
